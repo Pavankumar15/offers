@@ -1,0 +1,4 @@
+%h1 Stores
+= form_tag "/stores/show_products", method: :get do 
+  = collection_select(:store, :id, @stores.all, :id, :name_with_id)
+  = submit_tag "Select Store"

@@ -1,0 +1,6 @@
+%h1 Products
+= form_tag "/stores/show_offers", method: :get do
+  =collection_select(:product, :id, @products.all, :id, :productName)
+  = submit_tag "Select Product"
+%br
+= link_to 'Back to Stores', stores_show_stores_path
