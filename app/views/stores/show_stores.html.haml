@@ -1,4 +1,22 @@
-%h1 Stores
-= form_tag "/stores/show_products", method: :get do 
-  = collection_select(:store, :id, @stores.all, :id, :name_with_id)
-  = submit_tag "Select Store"
+!!!
+%html
+  %head
+    #section
+    %font{:color => "red"}
+      %h1 Stores
+    %form{"accept-charset" => "UTF-8", :action => "/stores/show_products", :method => "get"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %select#store_id{:name => "store[id]"}
+        %option{:value => "1"} Apple  (1)
+        %option{:value => "2"} Lenevo  (2)
+        %option{:value => "3"} HP  (3)
+        %option{:value => "4"} Microsoft  (4)
+        %option{:value => "5"} Hollister  (5)
+        %option{:value => "6"} Buffalo  (6)
+      %input{:name => "commit", :type => "submit", :value => "Select Store"}/
+    %img{:alt => "Smiley face", :height => "200", :src => "http://1.bp.blogspot.com/-1F3nGzjRPhE/UYOov424fNI/AAAAAAAAAsQ/LeUPaVM0BT4/s1600/shopUSA.jpg", :width => "250"}
+      %img{:alt => "Smiley face", :height => "200", :src => "http://www.amforward.com/img/shopping-in-usa.jpg", :width => "250"}
+        %img{:alt => "Smiley face", :height => "200", :src => "http://www.travelphilosophy.com/wp-content/uploads/2012/05/USA-Shopping1.jpg", :width => "250"}
+          %img{:alt => "Smiley face", :height => "200", :src => "http://www.wcrotts.com/images/Animation/296298599_0d2498fac7_o.gif", :width => "250"}
+            #footer
+              Powered By RACERS

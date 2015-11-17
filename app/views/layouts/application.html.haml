@@ -1,0 +1,48 @@
+!!!
+%html
+  %head
+    :css
+      #header {
+          background-color:green;
+          color:white;
+          text-align:center;
+          padding:5px;
+      }
+      #nav {
+          line-height:30px;
+          background-color:#dddccc;
+          height:300px;
+          width:100px;
+          float:left;
+          padding:5px;	      
+      }
+      #section {
+          width:350px;
+          float:left;
+          padding:10px;	 	 
+      }
+      #footer {
+          background-color:green;
+          color:white;
+          clear:both;
+          text-align:center;
+         padding:5px;	 	 
+      }
+      %body
+    #header
+      %h1 Thanks Giving 2015
+    #nav
+      %font{:color => "voilet"}
+        Submitted by:-
+        Pavan
+        %br
+          Mayur
+          %br
+            Harini
+            %br
+    %title Offers
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = yield

@@ -1,16 +1,22 @@
 %h1 Discounts
-%p Find me in app/views/stores/show_offers.html.haml
 %table#Discounts
-  %thead
-    %tr
-      %th Product Name
-      %th Store Name
-      %th Rate
-  - @discounts.each do |discount|
-    %tr
-      %td
-        = discount.productName
-      %td
-        = discount.storeName
-      %td
-        = discount.rate
+  -if @discounts.presence
+    %thead
+      %tr
+        %th Product Name
+        %th Store Name
+        %th Rate
+    %tbody
+      - @discounts.each do |discount|
+        %tr
+          %td
+            = discount.productName
+          %td
+            = discount.storeName
+          %td
+            = discount.rate
+  -else
+    %b "Oops !! Sorry Offer Expires... SomeOther Time"
+
+%br
+= link_to 'Get Back to Stores', stores_show_stores_path
